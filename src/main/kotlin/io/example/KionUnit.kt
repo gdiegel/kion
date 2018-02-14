@@ -12,7 +12,7 @@ class KionUnit(method: Method, klass: Class<*>, parent: KionClass) : AbstractTes
 ), Runnable {
 
     override fun run() {
-        println("Running $displayName")
+        println("Running kion unit $displayName")
     }
 
     internal val method: Method

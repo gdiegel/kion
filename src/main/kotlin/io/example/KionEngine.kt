@@ -1,7 +1,6 @@
 package io.example
 
 import org.junit.platform.commons.support.ReflectionSupport.findAllClassesInPackage
-import org.junit.platform.commons.util.AnnotationUtils
 import org.junit.platform.commons.util.ReflectionUtils
 import org.junit.platform.engine.*
 import org.junit.platform.engine.TestExecutionResult.failed
@@ -17,7 +16,7 @@ import java.util.function.Predicate
  */
 class KionEngine : TestEngine {
 
-    private val isKionContainer = Predicate<Class<*>> { AnnotationUtils.isAnnotated(it, KionTest::class.java) }
+    private val isKionContainer = Predicate<Class<*>> { it.superclass == KionSpec::class.java }
 
     override fun getId(): String {
         return "kion-engine"
@@ -65,7 +64,7 @@ class KionEngine : TestEngine {
         val instance = ReflectionUtils.newInstance(child.klass)
         try {
             ReflectionUtils.invokeMethod(child.method, instance)
-        } catch (e: Exception) {
+        } catch (e: Throwable) {
             return failed(e)
         }
         return successful()

@@ -1,10 +1,17 @@
 package io.example
 
-@KionTest
-class FirstTestClass {
+import org.assertj.core.api.Assertions.assertThat
 
-    @Given
+
+class FirstTestClass : KionSpec() {
+
+    @Spec
     fun uno() {
-        println("Rica chicha!")
+        given("Estoy tomando chicha", { assertThat("a").isEqualTo("a") })
+    }
+
+    @Spec
+    fun dos() {
+        given("Estoy tomando una más", { assertThat("a").isEqualTo("b") })
     }
 }

@@ -8,7 +8,6 @@ import org.junit.platform.engine.support.descriptor.ClassSource
 import java.lang.reflect.Method
 import java.util.function.Predicate
 
-
 class KionClass(
         klass: Class<*>,
         parent: TestDescriptor
@@ -17,7 +16,7 @@ class KionClass(
         klass.simpleName,
         ClassSource.from(klass)
 ) {
-    val isKionTest = Predicate<Method> { AnnotationUtils.isAnnotated(it, Given::class.java) }
+    val isKionTest = Predicate<Method> { AnnotationUtils.isAnnotated(it, Spec::class.java) }
 
     private var klass: Class<*>
 
