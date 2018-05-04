@@ -6,12 +6,20 @@ import org.assertj.core.api.Assertions.assertThat
 class FirstTestClass : KionSpec() {
 
     @Spec
-    fun uno() {
-        given("Estoy tomando chicha", { assertThat("a").isEqualTo("a") })
+    fun first() {
+        given("this is the first method",
+                {
+                    assertThat("a").isEqualTo("a")
+                }
+        )
     }
 
     @Spec
-    fun dos() {
-        given("Estoy tomando una más", { assertThat("a").isEqualTo("b") })
+    fun second() {
+        given("this is the second method",
+                {
+                    assertThat("a").isEqualTo("b")
+                }
+        )
     }
 }

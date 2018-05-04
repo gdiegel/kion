@@ -18,5 +18,4 @@ fun main(args: Array<String>) {
     launcher.registerTestExecutionListeners(summaryGeneratingListener)
     launcher.execute(request)
     summaryGeneratingListener.summary.printTo(PrintWriter(System.out))
-
 }

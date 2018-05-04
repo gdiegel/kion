@@ -16,7 +16,7 @@ class KionClass(
         klass.simpleName,
         ClassSource.from(klass)
 ) {
-    val isKionTest = Predicate<Method> { AnnotationUtils.isAnnotated(it, Spec::class.java) }
+    val isKionUnit = Predicate<Method> { AnnotationUtils.isAnnotated(it, Spec::class.java) }
 
     private var klass: Class<*>
 
@@ -27,11 +27,11 @@ class KionClass(
     }
 
     private fun addAllChildren() {
-        findMethods(klass, isKionTest).stream()
+        findMethods(klass, isKionUnit).stream()
                 .map { method -> KionUnit(method, klass, this) }
                 .peek { println(it) }
                 .forEach {
-                    println("Adding method ${it.displayName}")
+                    println("Found unit ${it.displayName}")
                     this.addChild(it)
                 }
     }
@@ -39,8 +39,6 @@ class KionClass(
     override fun getType(): TestDescriptor.Type = TestDescriptor.Type.CONTAINER
 
     override fun isTest(): Boolean = false
-
-    fun hasTests(): Boolean = true
 
     override fun isContainer(): Boolean = true
 }
