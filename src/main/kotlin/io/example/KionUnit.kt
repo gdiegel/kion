@@ -9,11 +9,7 @@ class KionUnit(method: Method, klass: Class<*>, parent: KionClass) : AbstractTes
         parent.getUniqueId().append("method", method.getName()),
         method.name,
         MethodSource.from(method)
-), Runnable {
-
-    override fun run() {
-        println("Running kion unit $displayName")
-    }
+) {
 
     internal val method: Method
     internal val klass: Class<*>
