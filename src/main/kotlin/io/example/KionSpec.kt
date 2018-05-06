@@ -1,12 +1,13 @@
 package io.example
 
 open class KionSpec {
-    fun <T> given(description: String, body: () -> T) {
+
+    fun spec(description: String?, body: () -> Unit) {
         println("Spec $description")
         try {
             body()
         } finally {
-            println("Exiting given block")
+            println("Exiting spec block")
         }
     }
 }

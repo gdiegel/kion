@@ -3,20 +3,20 @@ package io.example
 import org.assertj.core.api.Assertions.assertThat
 
 
-class FirstTestClass : KionSpec() {
+class MySpec : KionSpec() {
 
-    @Spec
-    fun first() {
-        given("this is the first method",
+    @Kion
+    fun will_pass() {
+        spec("a should be equal to a",
                 {
                     assertThat("a").isEqualTo("a")
                 }
         )
     }
 
-    @Spec
-    fun second() {
-        given("this is the second method",
+    @Kion
+    fun will_fail() {
+        spec("a should be equal to b",
                 {
                     assertThat("a").isEqualTo("b")
                 }

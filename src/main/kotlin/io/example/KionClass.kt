@@ -16,7 +16,7 @@ class KionClass(
         klass.simpleName,
         ClassSource.from(klass)
 ) {
-    val isKionUnit = Predicate<Method> { AnnotationUtils.isAnnotated(it, Spec::class.java) }
+    val isKionUnit = Predicate<Method> { AnnotationUtils.isAnnotated(it, Kion::class.java) }
 
     private var klass: Class<*>
 

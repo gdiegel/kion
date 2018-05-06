@@ -9,7 +9,7 @@
     <name>kion</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <kotlin.version>1.2.31</kotlin.version>
+        <kotlin.version>1.2.41</kotlin.version>
         <kotlin.compiler.jvmTarget>1.8</kotlin.compiler.jvmTarget>
     </properties>
     <dependencies>
