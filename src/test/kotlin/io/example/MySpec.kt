@@ -7,19 +7,8 @@ class MySpec : KionSpec() {
 
     @Kion
     fun will_pass() {
-        spec("a should be equal to a",
-                {
-                    assertThat("a").isEqualTo("a")
-                }
-        )
-    }
-
-    @Kion
-    fun will_fail() {
-        spec("a should be equal to b",
-                {
-                    assertThat("a").isEqualTo("b")
-                }
-        )
+        "A should be equal to a" spec {
+            assertThat("a").isEqualTo("a")
+        }
     }
 }
