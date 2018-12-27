@@ -2,7 +2,6 @@ package io.example
 
 import org.assertj.core.api.Assertions.assertThat
 
-
 class MySpec : KionSpec() {
 
     @Kion
