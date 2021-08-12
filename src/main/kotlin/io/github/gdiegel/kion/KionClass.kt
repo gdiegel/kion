@@ -1,4 +1,4 @@
-package io.example
+package io.github.gdiegel.kion
 
 import org.junit.platform.commons.util.AnnotationUtils
 import org.junit.platform.commons.util.ReflectionUtils.findMethods

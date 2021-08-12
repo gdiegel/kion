@@ -1,4 +1,4 @@
-package io.example
+package io.github.gdiegel.kion
 
 import org.junit.platform.engine.TestDescriptor
 import org.junit.platform.engine.support.descriptor.AbstractTestDescriptor

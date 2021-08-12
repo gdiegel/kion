@@ -1,4 +1,4 @@
-package io.example
+package io.github.gdiegel.kion
 
 open class KionSpec {
 

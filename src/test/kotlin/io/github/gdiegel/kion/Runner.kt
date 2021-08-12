@@ -1,4 +1,4 @@
-package io.example
+package io.github.gdiegel.kion
 
 import org.junit.platform.engine.discovery.DiscoverySelectors.selectPackage
 import org.junit.platform.launcher.core.LauncherDiscoveryRequestBuilder
@@ -9,7 +9,7 @@ import java.io.PrintWriter
 fun main(args: Array<String>) {
     val request = LauncherDiscoveryRequestBuilder.request()
             .selectors(
-                    selectPackage("io.example")
+                    selectPackage("io.github.gdiegel.kion")
             )
             .build()
 

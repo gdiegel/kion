@@ -1,4 +1,4 @@
-package io.example
+package io.github.gdiegel.kion
 
 import org.junit.platform.commons.support.ReflectionSupport.findAllClassesInPackage
 import org.junit.platform.commons.util.ReflectionUtils
@@ -9,7 +9,6 @@ import org.junit.platform.engine.discovery.PackageSelector
 import org.junit.platform.engine.support.descriptor.EngineDescriptor
 import org.junit.platform.engine.support.filter.ClasspathScanningSupport.buildClassNamePredicate
 import java.util.function.Predicate
-
 
 /**
  * Simple test engine implementation.
@@ -24,7 +23,7 @@ class KionEngine : TestEngine {
 
     override fun discover(discoveryRequest: EngineDiscoveryRequest, uniqueId: UniqueId): TestDescriptor {
         println("Called with discoveryRequest: $discoveryRequest, uniqueId: $uniqueId")
-        val classNamePredicate = buildClassNamePredicate(discoveryRequest)
+        val classNamePredicate: Predicate<String> = buildClassNamePredicate(discoveryRequest)
         val testDescriptor = EngineDescriptor(uniqueId, id)
 
         discoveryRequest.getSelectorsByType(PackageSelector::class.java).forEach { selector ->
