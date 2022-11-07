@@ -51,6 +51,7 @@ class KionEngine : TestEngine {
             is KionClass -> {
                 descriptor.children.forEach { child -> execute(child, listener) }
             }
+
             is KionUnit -> {
                 println("Executing ${descriptor}")
                 val result = executeKionUnit(descriptor)

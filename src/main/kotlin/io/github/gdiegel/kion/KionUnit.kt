@@ -6,9 +6,9 @@ import org.junit.platform.engine.support.descriptor.MethodSource
 import java.lang.reflect.Method
 
 class KionUnit(method: Method, klass: Class<*>, parent: KionClass) : AbstractTestDescriptor(
-        parent.getUniqueId().append("method", method.getName()),
-        method.name,
-        MethodSource.from(method)
+    parent.getUniqueId().append("method", method.getName()),
+    method.name,
+    MethodSource.from(method)
 ) {
 
     internal val method: Method
